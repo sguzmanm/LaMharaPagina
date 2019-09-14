@@ -14,6 +14,7 @@ cloudinary.config({
 });
 
 
+
 //Conf for receiving formData (files)
 router.use(fileUpload({
   useTempFiles: true
@@ -41,6 +42,15 @@ router.post("/uploadimage", function (req, res, next) {
     if (err) throw err;
     res.send(res2.url);
   });
+});
+
+router.get("/productos", function(req, res, next) {
+  const productos = [
+    {id: 1, nombre: "Bolso1", precio:20000},
+    {id: 2, nombre: "Bolso2", precio:25000},
+    {id: 3, nombre: "Bolso3", precio:30000},
+  ];
+  res.json(productos);
 });
 
 module.exports = router;
