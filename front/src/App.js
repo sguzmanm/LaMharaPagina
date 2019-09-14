@@ -1,29 +1,40 @@
-import React from "react";
-import { HashRouter, Route } from "react-router-dom";
-import NavBar from "./components/navBar/navbar";
-import HomePage from "./components/homePage/homePage";
-import BolsosPage from "./components/bolsosPage/bolsosPage";
-import AretesPage from "./components/aretesPage/aretesPage";
-import CollaresPage from "./components/collaresPage/collaresPage";
-import PulserasPage from "./components/pulserasPage/pulserasPage";
-import SwaroskyPage from "./components/swaroskiPage/swaroskyPage";
-import NoviasPage from "./components/noviasPage/noviasPage";
-import FileChooser from "./components/fileChooser/fileChooser"
+import React, {Component} from "react";
+import Producto from "./Producto.js";
 
-function App() {
-  return (
-    <HashRouter>
-      <Route path="/" component={NavBar} />
-      <Route path="/" component={HomePage} exact />
-      <Route path="/bolsos" component={BolsosPage} />
-      <Route path="/aretes" component={AretesPage} />
-      <Route path="/collares" component={CollaresPage} />
-      <Route path="/pulseras" component={PulserasPage} />
-      <Route path="/swarosky" component={SwaroskyPage} />
-      <Route path="/novias" component={NoviasPage} />
-      <Route path="/" component={FileChooser} />
-    </HashRouter>
-  );
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      productos: []
+    }
+  }
+
+  componentDidMount(){
+    fetch("/productos")
+      .then(res => res.json())
+      .then(productos => this.setState({
+        productos: productos
+      }));
+  }
+
+  renderProductos()
+  {
+    return this.state.productos.map(t => <Producto producto={t}></Producto>);
+  };
+
+  render() {
+  return(
+    <div className="container">
+      <div>HolaMundo</div>
+      Columna 1
+      <div className ="row">
+        {this.renderProductos()}
+      </div>
+    </div>
+    )
+  }
 }
+
 
 export default App;
