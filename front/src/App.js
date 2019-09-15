@@ -21,11 +21,11 @@ class App extends Component {
         productos: productos
       }));
   }
-
-  renderProductos()
+ renderProductos()
   {
     return this.state.productos.map(t => <Producto producto={t}></Producto>);
   };
+
 
   render() {
   return(
@@ -34,16 +34,55 @@ class App extends Component {
     <TopMenu/>
     </div>
     <div className="container">
+      <Route exact path="/" component={Home} />
+      <Route path="/nuestrosProductos" component={NuestrosProductos} />
+      <Route path="/quienesSomos" component={QuienesSomos} />
+      <Route path="/signUp" component={SignUp} />
+      <Route path="/login" component={Login} />
       <h1>Productos</h1>
-      <div className ="row">
-        {this.renderProductos()}
-      </div>
       <CrearProd/>
       <Feedback/>
     </div>
     </Router>
     )
   }
+}
+
+function Home(){
+  return(
+    <div>
+      <h1>Hola</h1>
+    </div>
+  );
+};
+
+function NuestrosProductos(){
+  return(
+    <div className ="row">
+      App.renderProductos();
+    </div>
+  );
+};
+function QuienesSomos(){
+  return(
+    <div className ="row">
+      {this.renderProductos()}
+    </div>
+  );
+};
+function SignUp(){
+  return(
+    <div className ="row">
+      {this.renderProductos()}
+    </div>
+  );
+}
+function Login(){
+  return(
+    <div className ="row">
+      {this.renderProductos()}
+    </div>
+  );
 }
 
 
