@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import "./Producto.css"
 
 class Producto extends Component{
   constructor (props){
@@ -24,7 +24,10 @@ class Producto extends Component{
         <div className="row infoProducto">
             {this.props.producto.nombre}
         </div>
-        <div className="row">
+        <div className="row imgProducto">
+          <img className="imgProd" src={this.props.producto.imagen} alt={this.props.producto.nombre}/>
+        </div>
+        <div className="row btnProd">
           <button className="btn btn-primary"
             onClick={ this.comprar}>
             Comprar
