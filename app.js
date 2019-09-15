@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, "front/build")));
 
 app.use("/", indexRouter);
 
+//sguzmanm I recommend handling this 404 errors on the frontend instead, or for you to have a nice 404 template in the back
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
