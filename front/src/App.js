@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TopMenu from './TopMenu';
 import CrearProd from "./CrearProd";
 import Feedback from "./Feedback.js";
+import Login from "./Login.js";
+import Signup from "./SignUp.js";
 
 class App extends Component {
 
@@ -40,7 +42,7 @@ class App extends Component {
       <Route path="/nuestrosProductos" component={NuestrosProductos} />
       <Route path="/quienesSomos" component={QuienesSomos} />
       <Route path="/signUp" component={SignUp} />
-      <Route path="/login" component={Login} />
+      <Route path="/login" component={Loginn} />
       <Route path="/agregarProducto" component={AgregarProducto} />
     </div>
     </Router>
@@ -75,22 +77,18 @@ function SignUp(){
   return(
     <div className ="row">
     <h1>Este es signup</h1>
+    <Signup/>
     </div>
   );
 }
-function Login(){
+function Loginn(){
   return(
-    <div className ="row">
-      <h1>Este es loggin</h1>
-    </div>
+    <Login/>
   );
 }
 function AgregarProducto(){
   return(
-    <div className ="row">
-      <h1>Este es AgregarProducto</h1>
-      <CrearProd/>
-    </div>
+    <CrearProd/>
   );
 }
 
