@@ -2,11 +2,13 @@ import React, {Component} from "react";
 import "./CrearProd.css"
 class CrearProd extends Component {
 
+x
+
   render() {
     return (
       <div className="formulario">
         <h1>Crear Nuevo Producto </h1>
-        <form >
+        <form className="nuevaInfo" action="/crearProducto" method="POST" >
           <div className ="row">
           Ingrese la siguiente información
           </div>
@@ -16,7 +18,7 @@ class CrearProd extends Component {
               <label for="nombre">Nombre:</label>
             </div>
             <div className ="col-md-6">
-              <input className = "form-control" type="text" id="nombre"></input>
+              <input className = "form-control" type="text" name="nombre"></input>
             </div>
           </div>
 
@@ -25,7 +27,7 @@ class CrearProd extends Component {
               <label for="precio">Precio:</label>
             </div>
             <div className ="col-md-6">
-              <input className = "form-control" type="number" min="0" step="1000" id="c2" />
+              <input className = "form-control" type="number" min="0" step="1000" name="precio" />
             </div>
           </div>
 
@@ -34,7 +36,7 @@ class CrearProd extends Component {
               <label for="imagen">Imagen(Ingrese una url):</label>
             </div>
             <div className ="col-md-6">
-              <input className = "form-control" type="text" id="imagen"></input>
+              <input className = "form-control" type="text" name="imagen"></input>
             </div>
           </div>
 
@@ -43,15 +45,13 @@ class CrearProd extends Component {
               <label for="dimensiones">Caracteristicas:</label>
             </div>
             <div className ="col-md-6">
-              <input className = "form-control" type="text" id="dimensiones"></input>
+              <input className = "form-control" type="text" name="dimensiones"></input>
             </div>
           </div>
-          <div className="row justify-content-center">
-            <button className="btn btn-primary"
-            onClick={ this.comprar}>
-            Comprar
-          </button>
+          <div className="row justify-conten-center">
+            <input type="submit" value="submit"></input>
           </div>
+
         </form>
       </div>
       )
