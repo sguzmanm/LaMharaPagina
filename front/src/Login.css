@@ -1,9 +1,9 @@
-form{
+.formLogin{
   padding: 0% 30%;
 }
 
 @media (max-width: 576px) {
-  form{
+  .formLogin{
     padding: 0% 0%;
   }
 

@@ -5,7 +5,7 @@ class Feedback extends Component {
   render() {
   return(
     <div className="row">
-      <div className="col-md-6">
+      <div className="col-md-12 campoTexto">
         <div className="widget-area no-padding blank">
           <div className="status-upload text-center">
             <form>

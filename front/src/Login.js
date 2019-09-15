@@ -8,7 +8,7 @@ const Login = () => {
     <MDBContainer>
       <MDBRow>
         <MDBCol md="6">
-          <form>
+          <form className="formLogin">
             <p className="h5 text-center mb-4">Sign in</p>
             <div className="grey-text">
               <MDBInput
