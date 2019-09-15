@@ -12,6 +12,7 @@ export default () =>
       <li><Link to="/nuestrosProductos">Nuestros Productos</Link></li>
       <li><Link to="/quienesSomos">Quienes Somos</Link></li>
       <li><Link to="/agregarProducto">AgregarProducto</Link></li>
+      <li><Link to="/verComentarios">VerComentarios</Link></li>
     </ul>
     <ul className="nav navbar-nav navbar-right">
       <li><Link to="/signUp"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
