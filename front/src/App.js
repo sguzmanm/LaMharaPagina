@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ReactDOM from 'react-dom';
 import Producto from "./Producto.js";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TopMenu from './TopMenu';
@@ -12,6 +13,7 @@ class App extends Component {
     this.state = {
       productos:[]
     }
+    window.AppComponent=this;
   }
 
   componentDidMount(){
@@ -59,7 +61,7 @@ function Home(){
 function NuestrosProductos(){
   return(
     <div className ="row">
-      App.renderProductos();
+      {window.AppComponent.renderProductos()};
     </div>
   );
 };
