@@ -44,7 +44,7 @@ function getProductos(callback){
       {
         if (err2) throw err2;
 
-        console.log("got" + docs.length + "comments");
+        console.log("got " + docs.length + "'products");
 
         callback(docs);
         client.close();

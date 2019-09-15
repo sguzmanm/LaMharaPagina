@@ -1,3 +1,5 @@
 .tituloComentarios{
   background-color: grey;
 }
+
+.active a.list-group-item { background-color: rgb(0,0,0); }
