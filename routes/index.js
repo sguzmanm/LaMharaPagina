@@ -2,13 +2,40 @@ var express = require("express");
 var router = express.Router();
 
 /*GET home page*/
+
+function getProductos(callback){
+  var MongoClient = require("mongodb").MongoClient;
+  var url = "mongodb+srv://admin:admin@lamharadb-yinqm.mongodb.net/test?retryWrites=true&w=majority";
+  var client = new MongoClient(url,{useNewUrlParser:true});
+
+  client.connect((err) => {
+
+    if (err) throw err;
+
+    console.log("Conectado con mongo");
+    var db = client.db("ProductosDB");
+    var colProds = db.collection("producto");
+
+    colProds.find({})
+      .toArray(function(err2,docs)
+      {
+        if (err2) throw err2;
+
+        console.log("got" + docs.length + "comments");
+
+        callback(docs);
+        client.close();
+
+      });
+
+  });
+}
+
 router.get("/productos", function(req, res, next) {
-  const productos = [
-    {id: 1, nombre:"Bolso1", precio:20000, imagen:"https://raw.githubusercontent.com/lmaya10/LaMharaPagina/master/images/BolsoCafe.jpg"},
-    {id: 2, nombre:"Bolso2", precio:25000, imagen:"https://raw.githubusercontent.com/lmaya10/LaMharaPagina/master/images/BolsoCafe.jpg"},
-    {id: 3, nombre:"Bolso3", precio:30000, imagen:"https://raw.githubusercontent.com/lmaya10/LaMharaPagina/master/images/BolsoCafe.jpg"}
-  ];
-  res.json(productos);
+  getProductos(function(docs)
+  {
+     res.send(docs);
+  })
 
 });
 

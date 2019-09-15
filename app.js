@@ -4,21 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb+srv://admin:admin@lamharadb-yinqm.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(url,{useNewUrlParser:true});
-
-client.connect((err) => {
-
-  if (err) throw err;
-
-  console.log("Conectado con mongo");
-  const db = client.db("ProductosDB");
-  const colProds = db.collection("producto");
-
-  client.close();
-})
-
 var indexRouter = require("./routes/index");
 
 var app = express();
