@@ -41,9 +41,7 @@ class App extends Component {
       <Route path="/quienesSomos" component={QuienesSomos} />
       <Route path="/signUp" component={SignUp} />
       <Route path="/login" component={Login} />
-      <h1>Productos</h1>
-      <CrearProd/>
-      <Feedback/>
+      <Route path="/agregarProducto" component={AgregarProducto} />
     </div>
     </Router>
     )
@@ -53,7 +51,7 @@ class App extends Component {
 function Home(){
   return(
     <div>
-      <h1>Hola</h1>
+      <h1>Este es el Home Page</h1>
     </div>
   );
 };
@@ -68,24 +66,32 @@ function NuestrosProductos(){
 function QuienesSomos(){
   return(
     <div className ="row">
-      {this.renderProductos()}
+      <h1>Este es quienes somos</h1>
+      <Feedback/>
     </div>
   );
 };
 function SignUp(){
   return(
     <div className ="row">
-      {this.renderProductos()}
+    <h1>Este es signup</h1>
     </div>
   );
 }
 function Login(){
   return(
     <div className ="row">
-      {this.renderProductos()}
+      <h1>Este es loggin</h1>
     </div>
   );
 }
-
+function AgregarProducto(){
+  return(
+    <div className ="row">
+      <h1>Este es AgregarProducto</h1>
+      <CrearProd/>
+    </div>
+  );
+}
 
 export default App;
