@@ -9,6 +9,7 @@ import Login from "./Login.js";
 import Signup from "./SignUp.js";
 import AboutUs from "./AboutUs.js";
 import Homee from "./Home.js"
+import VerComentarioss from "./VerComentarios"
 
 class App extends Component {
 
@@ -46,6 +47,7 @@ class App extends Component {
       <Route path="/signUp" component={SignUp} />
       <Route path="/login" component={Loginn} />
       <Route path="/agregarProducto" component={AgregarProducto} />
+      <Route path="/verComentarios" component={VerComentarios} />
     </div>
     </Router>
     )
@@ -91,6 +93,11 @@ function Loginn(){
 function AgregarProducto(){
   return(
     <CrearProd/>
+  );
+}
+function VerComentarios(){
+  return(
+    <VerComentarioss/>
   );
 }
 
