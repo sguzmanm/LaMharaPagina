@@ -1,15 +1,14 @@
 import React from "react";
-
+import "./Home.css"
 const Home = () => {
 return (
-  <div>
-    <div className="jumbotron jumbotron-fluid">
-      <div className="container">
-        <img src="../images/Cowboy.jpg" className="img-fluid" alt="Responsive image"/>
-        <h1 className="display-4">Fluid jumbotron</h1>
-        <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-      </div>
-    </div>
+  <div id>
+
+        <div class="jumbotron">
+        <h1 className="display-4">La Mhara</h1>
+        <p className="lead"> Cuero 100% colombiano hecho a tu medida.</p>
+
+        </div>
   </div>
   );
 };

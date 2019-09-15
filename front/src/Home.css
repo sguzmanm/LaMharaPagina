@@ -1,0 +1,10 @@
+.jumbotron {
+
+  background: url("https://raw.githubusercontent.com/lmaya10/LaMharaPagina/master/images/Cowboy.jpg") no-repeat center center;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+    padding-top: 20%;
+      padding-bottom: 20%;
+}
