@@ -8,15 +8,15 @@ class Feedback extends Component {
       <div className="col-md-12 campoTexto">
         <div className="widget-area no-padding blank">
           <div className="status-upload text-center">
-            <form>
-                <textarea placeholder="¿Tienes algun comentario sobre nuestra pagina? Escribenos para mejorar" ></textarea>
+            <form action="/crearComentario" method="POST">
+                <textarea placeholder="¿Tienes algun comentario sobre nuestra pagina? Escribenos para mejorar" name="text" ></textarea>
                 <ul>
                   <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i className="fa fa-music"></i></a></li>
                   <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i className="fa fa-video-camera"></i></a></li>
                   <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i className="fa fa-microphone"></i></a></li>
                   <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i className="fa fa-picture-o"></i></a></li>
                 </ul>
-                <button type="submit" className="btn btn-success green"><i className="fa fa-share"></i> Enviar</button>
+                <input className = "btn"type="submit" value="Enviar"></input>
             </form>
           </div>
         </div>

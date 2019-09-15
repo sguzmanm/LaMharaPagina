@@ -49,7 +49,7 @@ class CrearProd extends Component {
           </div>
           <div className="row ">
             <div className="col-md-12 text-center">
-              <input className = "btn"type="subit" value="Submit"></input>
+              <input className = "btn"type="submit" value="Submit"></input>
             </div>
           </div>
 
