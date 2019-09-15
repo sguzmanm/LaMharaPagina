@@ -14,15 +14,15 @@ handleSubmit(e) {
     const { name, email, subject, message } = this.state
     let templateParams = {
       from_name: email,
-      to_name: '<YOUR_EMAIL_ID>',
+      to_name: 'fjmacom@gmail.com',
       subject: subject,
       message_html: message,
      }
      emailjs.send(
       'gmail',
-      'template_XXXXXXXX',
+      'template_0A6cN7MK',
        templateParams,
-      'user_XXXXXXXXXXXXXXXXXXXX'
+      'user_U9EqNb0VAs48fSLZ41Obc'
      )
      this.resetForm()
  }

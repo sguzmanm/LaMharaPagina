@@ -48,8 +48,8 @@ class App extends Component {
     <Route path="/quienesSomos" component={QuienesSomos} />
       <Route path="/signUp" component={SignUp} />
       <Route path="/login" component={Loginn} />
-      <ProtectedRoute exact path="/agregarProducto" component={AgregarProducto} />
-      <ProtectedRoute exact path="/verComentarios" component={VerComentarios} />
+      <PrivateRoute exact path="/agregarProducto" component={AgregarProducto} />
+      <PrivateRoute exact path="/verComentarios" component={VerComentarios} />
     </div>
     <div className="container">
     </div>
