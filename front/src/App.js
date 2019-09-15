@@ -30,8 +30,10 @@ class App extends Component {
   render() {
   return(
     <Router>
-    <div className="container">
+    <div className="container-fluid">
     <TopMenu/>
+    </div>
+    <div className="container">
       <h1>Productos</h1>
       <div className ="row">
         {this.renderProductos()}
