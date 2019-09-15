@@ -24,7 +24,7 @@ class Producto extends Component{
         <div className="row infoProducto">
             {this.props.producto.nombre}
         </div>
-        <div className="row imgProducto">
+        <div className="row imgProducto text-center">
           <img className="imgProd" src={this.props.producto.imagen} alt={this.props.producto.nombre}/>
         </div>
         <div className="row btnProd">
@@ -33,12 +33,14 @@ class Producto extends Component{
             Comprar
           </button>
         </div>
-        <div className="row">
-          <span>
-            Cantidad:
-            <span id="compraValue">
-              {this.state.cantidad}
-            </span>
+        <div className="text-center">
+          <span className="textPrecio">
+            $ {this.props.producto.precio}
+          </span>
+        </div>
+        <div className="row text-center">
+          <span className="textDescripcion">
+              {this.props.producto.descripcion}
           </span>
         </div>
       </div>
