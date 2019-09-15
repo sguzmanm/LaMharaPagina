@@ -29,7 +29,7 @@ class VerComentarios extends Component{
     return (
       <MDBContainer>
         <MDBListGroup style={{ width: "80%" }}>
-          <MDBListGroupItem active href="#">
+          <MDBListGroupItem className="tituloComentarios" active href="#">
             <div className="d-flex w-500 justify-content-between">
               <h3> Comentarios Clientes </h3>
             </div>
