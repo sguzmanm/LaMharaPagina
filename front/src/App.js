@@ -7,6 +7,8 @@ import CrearProd from "./CrearProd";
 import Feedback from "./Feedback.js";
 import Login from "./Login.js";
 import Signup from "./SignUp.js";
+import AboutUs from "./AboutUs.js";
+import Homee from "./Home.js"
 
 class App extends Component {
 
@@ -53,7 +55,7 @@ class App extends Component {
 function Home(){
   return(
     <div>
-      <h1>Este es el Home Page</h1>
+    <Homee/>
     </div>
   );
 };
@@ -68,7 +70,7 @@ function NuestrosProductos(){
 function QuienesSomos(){
   return(
     <div className ="row">
-      <h1>Este es quienes somos</h1>
+      <AboutUs/>
       <Feedback/>
     </div>
   );

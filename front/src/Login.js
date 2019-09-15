@@ -4,9 +4,10 @@ import "./Login.css";
 
 const Login = () => {
   return (
+    <div class="text-center">
     <MDBContainer>
       <MDBRow>
-        <MDBCol md="12">
+        <MDBCol md="6">
           <form>
             <p className="h5 text-center mb-4">Sign in</p>
             <div className="grey-text">
@@ -34,6 +35,7 @@ const Login = () => {
         </MDBCol>
       </MDBRow>
     </MDBContainer>
+    </div>
   );
 };
 
