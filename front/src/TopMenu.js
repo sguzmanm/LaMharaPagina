@@ -1,8 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, withRouter } from "react-router-dom";
+import auth from "./auth.js";
 
-export default () =>
-  <nav className="navbar navbar-inverse">
+export const TopMenu = props =>{
+  return(
+    <div>
+      <nav className="navbar navbar-inverse">
   <div className="container-fluid">
     <div className="navbar-header">
       <a className="navbar-brand" href="#">La Mhara</a>
@@ -17,6 +20,16 @@ export default () =>
     <ul className="nav navbar-nav navbar-right">
       <li><Link to="/signUp"><span className="glyphicon glyphicon-user"></span> Sign Up</Link></li>
       <li><Link to="/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+      <li><Link onClick={()=>{
+        auth.logout(()=>{
+          props.history.push("/");
+        });
+      }}
+      ><span className="glyphicon glyphicon-log-out"></span> Logout</Link></li>
     </ul>
   </div>
 </nav>
+</div>
+  );
+};
+export default withRouter(TopMenu);

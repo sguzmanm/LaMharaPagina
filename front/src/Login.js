@@ -1,8 +1,8 @@
 import React from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import "./Login.css";
-
-const Login = () => {
+import auth from "./auth.js"
+const Login = props => {
   return (
     <div class="text-center">
     <MDBContainer>
@@ -29,7 +29,13 @@ const Login = () => {
               />
             </div>
             <div className="text-center">
-              <MDBBtn>Login</MDBBtn>
+              <MDBBtn
+              onClick={()=>{
+                  auth.login(()=>{
+                    props.history.push("/");
+                  });
+                }}
+              >Login</MDBBtn>
             </div>
           </form>
         </MDBCol>

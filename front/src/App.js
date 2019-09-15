@@ -1,15 +1,18 @@
 import React, {Component} from "react";
 import ReactDOM from 'react-dom';
 import Producto from "./Producto.js";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter, Router, Route, Link, Switch } from "react-router-dom";
 import TopMenu from './TopMenu';
 import CrearProd from "./CrearProd";
 import Feedback from "./Feedback.js";
 import Login from "./Login.js";
 import Signup from "./SignUp.js";
 import AboutUs from "./AboutUs.js";
-import Homee from "./Home.js"
-import VerComentarioss from "./VerComentarios"
+import Homee from "./Home.js";
+import VerComentarioss from "./VerComentarios";
+import {ProtectedRoute} from "./protected.route.js";
+import history from "./history";
+import ContactForm from "./ContactForm.js";
 
 class App extends Component {
 
@@ -36,19 +39,21 @@ class App extends Component {
 
   render() {
   return(
-    <Router>
+    <Router history={history}>
+    <Switch>
     <div className="container-fluid">
     <TopMenu/>
     <Route exact path="/" component={Home}/>
-    </div>
-    <div className="container">
-      <Route path="/nuestrosProductos" component={NuestrosProductos} />
-      <Route path="/quienesSomos" component={QuienesSomos} />
+    <Route path="/nuestrosProductos" component={NuestrosProductos} />
+    <Route path="/quienesSomos" component={QuienesSomos} />
       <Route path="/signUp" component={SignUp} />
       <Route path="/login" component={Loginn} />
-      <Route path="/agregarProducto" component={AgregarProducto} />
-      <Route path="/verComentarios" component={VerComentarios} />
+      <ProtectedRoute exact path="/agregarProducto" component={AgregarProducto} />
+      <ProtectedRoute exact path="/verComentarios" component={VerComentarios} />
     </div>
+    <div className="container">
+    </div>
+    </Switch>
     </Router>
     )
   }
@@ -73,6 +78,7 @@ function QuienesSomos(){
   return(
     <div className ="row">
       <AboutUs/>
+      <ContactForm/>
       <Feedback/>
     </div>
   );
