@@ -14,7 +14,8 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "mongodb": "^3.3.2",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "react-bootstrap-sidebar": "0.0.1"
   },
   "devDependencies": {
     "emailjs-com": "^2.3.2",
