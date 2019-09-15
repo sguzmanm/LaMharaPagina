@@ -38,9 +38,9 @@ class App extends Component {
     <Router>
     <div className="container-fluid">
     <TopMenu/>
+    <Route exact path="/" component={Home}/>
     </div>
     <div className="container">
-      <Route exact path="/" component={Home} />
       <Route path="/nuestrosProductos" component={NuestrosProductos} />
       <Route path="/quienesSomos" component={QuienesSomos} />
       <Route path="/signUp" component={SignUp} />
