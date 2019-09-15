@@ -1,40 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { MDBListGroup, MDBListGroupItem, MDBContainer } from "mdbreact";
+import Comentario from "./Comentario.js";
+import "./VerComentarios.css"
 
-const VerComentarios = () => {
-return (
-<MDBContainer>
-  <MDBListGroup style={{ width: "22rem" }}>
-    <MDBListGroupItem active href="#">
-      <div className="d-flex w-100 justify-content-between">
-        <h5 className="mb-1">List group item heading</h5>
-        <small>3 days ago</small>
-      </div>
-      <p className="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-        blandit.</p>
-      <small>Donec id elit non mi porta.</small>
-    </MDBListGroupItem>
-    <MDBListGroupItem hover href="#">
-      <div className="d-flex w-100 justify-content-between">
-        <h5 className="mb-1">List group item heading</h5>
-        <small className="text-muted">3 days ago</small>
-      </div>
-      <p className="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-        blandit.</p>
-      <small className="text-muted">Donec id elit non mi porta.</small>
-    </MDBListGroupItem>
-    <MDBListGroupItem hover href="#">
-      <div className="d-flex w-100 justify-content-between">
-        <h5 className="mb-1">List group item heading</h5>
-        <small className="text-muted">3 days ago</small>
-      </div>
-      <p className="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
-        blandit.</p>
-      <small className="text-muted">Donec id elit non mi porta.</small>
-    </MDBListGroupItem>
-  </MDBListGroup>
-</MDBContainer>
-);
-};
+class VerComentarios extends Component{
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      comentarios:[]
+    }
+  };
+
+  componentDidMount(){
+    fetch("/comentarios")
+      .then(res => res.json())
+      .then(comentarios => this.setState({
+        comentarios: comentarios
+      }));
+  };
+
+  renderComentarios()
+  {
+    return this.state.comentarios.map(t => <Comentario comentario={t}></Comentario>);
+  };
+
+  render(){
+    return (
+      <MDBContainer>
+        <MDBListGroup style={{ width: "80%" }}>
+          <MDBListGroupItem active href="#">
+            <div className="d-flex w-500 justify-content-between">
+              <h3> Comentarios Clientes </h3>
+            </div>
+          </MDBListGroupItem>
+          {this.renderComentarios()}
+        </MDBListGroup>
+      </MDBContainer>
+    );
+  };
+}
 export default VerComentarios;
