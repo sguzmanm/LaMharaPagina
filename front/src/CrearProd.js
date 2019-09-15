@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import "./CrearProd.css"
 class CrearProd extends Component {
 
-x
 
   render() {
     return (
@@ -48,8 +47,10 @@ x
               <input className = "form-control" type="text" name="dimensiones"></input>
             </div>
           </div>
-          <div className="row justify-conten-center">
-            <input type="submit" value="submit"></input>
+          <div className="row ">
+            <div className="col-md-12 text-center">
+              <input className = "btn"type="subit" value="Submit"></input>
+            </div>
           </div>
 
         </form>

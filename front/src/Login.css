@@ -1,0 +1,10 @@
+form{
+  padding: 0% 30%;
+}
+
+@media (max-width: 576px) {
+  form{
+    padding: 0% 0%;
+  }
+
+}

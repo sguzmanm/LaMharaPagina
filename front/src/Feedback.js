@@ -7,7 +7,7 @@ class Feedback extends Component {
     <div className="row">
       <div className="col-md-6">
         <div className="widget-area no-padding blank">
-          <div className="status-upload">
+          <div className="status-upload text-center">
             <form>
                 <textarea placeholder="¿Tienes algun comentario sobre nuestra pagina? Escribenos para mejorar" ></textarea>
                 <ul>
