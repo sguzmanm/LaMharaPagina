@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import TopMenu from './TopMenu';
 import * as serviceWorker from './serviceWorker';
-
+import Feedback from "./Feedback.js";
 ReactDOM.render(
   <div>
     <TopMenu/>
     <div className="container">
       <App/>
+      <Feedback/>
     </div>
   </div>
   , document.getElementById('root'));
